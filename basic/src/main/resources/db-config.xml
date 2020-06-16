@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"  
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans  
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="db1" class="com.spring.basic.ex02.DataBaseInfo">
+		<!-- setter 주입 -->
+		<!-- 멤버변수명이 아닌 정확히는 setUrl이라는 이름에서 set값을 뺀 이름임!!! -->
+		<property name="url" value="jdbc:mysql://localhost:3306/spring" />
+		<property name="uid" value="spring1" />
+		<property name="upw" value="sss111" />
+	</bean>
+	
+	<bean id="db2" class="com.spring.basic.ex02.DataBaseInfo">
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+		<property name="uid" value="system" />
+		<property name="upw" value="oracle" />
+	</bean>
+	
+	<bean id="dao" class="com.spring.basic.ex02.MemberDAO">
+		<!-- dbInfo(db2) 객체 주입 -->
+		<property name="dbInfo" ref="db2" />
+	</bean>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+</beans>
