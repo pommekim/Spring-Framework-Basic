@@ -16,6 +16,8 @@ public class MainClass {
 		Computer com = ct.getBean("computer", Computer.class);
 		
 		com.computerInfo();
+		
+		ct.close();
 
 	}
 
